@@ -1,0 +1,26 @@
+/* ************************************************** Header */
+
+/* ************************************************** Content */
+
+.top-container {
+    position: relative;
+    text-align: center;
+}
+
+.top-pic {
+    height: 250px;
+    background-image: url('../images/bicycling-helmet.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.top-header {
+    font-size: 25px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 88%;
+    left: 0;
+    padding: 0;
+}
