@@ -1,5 +1,6 @@
 /* ************************************************** Header */
 
+
 /* ************************************************** Content */
 
 .top-container {
@@ -23,4 +24,60 @@
     top: 88%;
     left: 0;
     padding: 0;
+}
+
+.intro-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.introduction {
+    border: 1px solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.stats-box {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid;
+    text-align: center;
+}
+
+.stats-title {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.stats-number {
+    font-size: 30px;
+    padding-bottom: 10px;
+    color: #C21807;
+    text-align: center;
+}
+
+div.dc-chart {
+    float: none!important;
+}
+
+.dc-chart g.row text {
+    fill: black;
+    font-size: 25px;
+}
+
+.year-selec-container {
+    padding-top: 10px;
+}
+
+.year-selector-box {
+    padding-top: 7px;
+    padding-left: 15px;
+}
+
+.graph-box {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid;
+    text-align: center;
 }
