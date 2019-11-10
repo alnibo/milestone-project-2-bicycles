@@ -1,5 +1,93 @@
-/* ************************************************** Header */
 
+body {
+    padding-top: 55px;
+}
+
+/* ************************************************** Navbar */
+
+.navbar {
+    margin-bottom: 0;
+    width: 100%;
+    height: 55px;
+    background-color: rgb(240, 240, 240);
+    border: 0;
+}
+
+.navbar-brand i {
+    padding-right: 5px;
+}
+
+.navbar-collapse {
+    background-color: rgb(240, 240, 240);
+}
+
+.navbar .navbar-toggler {
+    border: 0;
+}
+
+.navbar-nav {
+    padding-left: 10px;
+}
+
+.nav-button {
+    border: none;
+    background-color: transparent;
+}
+
+/* ************************************************** Help window */
+
+.help-window {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.help-box {
+    margin: 25% auto;
+    padding: 20px;
+    position: relative;
+    width: 80%;
+    background-color: rgb(240, 240, 240);
+    animation-name: helpWindow;
+    animation-duration: 0.3s;
+}
+
+@keyframes helpWindow {
+    from {left: -500px; opacity: 0;}
+    to {left: 0; opacity: 1;}
+}
+
+.help-header {
+    text-align: center;
+}
+
+.help-header h2 {
+    font-size: 20px;
+    padding-top: 15px;
+}
+
+.help-close {
+    position: absolute;
+    top: 0px;
+    left: 90%;
+    font-size: 1.5em;
+    padding-top: 10px;
+}
+
+.help-close:hover {
+    color: grey;
+    cursor: pointer;
+}
+
+.help-content {
+    padding: 20px 30px;
+}
 
 /* ************************************************** Content */
 
@@ -10,7 +98,7 @@
 
 .top-pic {
     height: 250px;
-    background-image: url('../images/bicycling-helmet.jpg');
+    background-image: url('../images/bike-traffic.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -18,8 +106,7 @@
 
 .top-header {
     font-size: 25px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(240, 240, 240, 0.8);
     position: absolute;
     top: 88%;
     left: 0;
@@ -27,21 +114,24 @@
 }
 
 .intro-container {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 50px;
+    padding-bottom: 30px;
 }
 
 .introduction {
-    border: 1px solid;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    border: 1px solid rgba(240, 240, 240);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
 }
+
+/* ************************************************** Stat Numbers */
 
 .stats-box {
     padding: 10px;
     margin: 10px;
-    border: 1px solid;
     text-align: center;
+    background-color: rgb(240, 240, 240, 0.9);
 }
 
 .stats-title {
@@ -67,17 +157,77 @@ div.dc-chart {
 }
 
 .year-selec-container {
-    padding-top: 10px;
+    padding-top: 40px;
+    padding-bottom: 30px;
 }
 
 .year-selector-box {
-    padding-top: 7px;
-    padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid rgba(240, 240, 240);
+    text-align: center;
 }
+
+.year-selector-dropdown {
+    padding-top: 7px;
+    padding-bottom: 20px;
+}
+
+/* ************************************************** Charts */
 
 .graph-box {
     padding: 10px;
     margin: 10px;
-    border: 1px solid;
     text-align: center;
+    background-color: rgb(240, 240, 240, 0.9);
+}
+
+.chart-intro {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.chart-description {
+    padding-top: 20px;
+}
+
+.x-axis-label {
+    padding-top: 20px;
+}
+
+/* ************************************************** Back to Top Button */
+
+.back-to-top {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.back-to-top-button {
+    background-color: rgb(240, 240, 240);
+}
+
+.fa-angle-double-up {
+    padding-left: 10px;
+}
+
+
+/* ************************************************** Footer */
+
+footer {
+    height: 55px;
+    background-color: rgb(240, 240, 240);
+}
+
+.footer-text {
+    text-align: center;
+    padding-top: 15px;
+}
+
+/* ************************************************** Media Queries */
+
+@media (min-width:1030px) {
+    .help-header h2 {
+        font-size: 25px;
+    }
 }

@@ -1,14 +1,18 @@
-         ___        ______     ____ _                 _  ___  
-        / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
-       / _ \ \ /\ / /\___ \  | |   | |/ _ \| | | |/ _` | (_) |
-      / ___ \ V  V /  ___) | | |___| | (_) | |_| | (_| |\__, |
-     /_/   \_\_/\_/  |____/   \____|_|\___/ \__,_|\__,_|  /_/ 
- ----------------------------------------------------------------- 
+      ____   ____        _     ____    _   _
+     / ___| |  __ \     / \   / ___|  | | | |
+    | |     | |__) |   / _ \  \___ \  | |_| |
+    | |___  |  __ \   / ___ \  ___) | |  _| |
+     \____| | |  \ \ /_/   \_\|____/  |_| |_|
+ --------------------------- -------------------------------------- 
 
+## Credits
 
-Hi there! Welcome to AWS Cloud9!
+### Content
+All written content on the about page was retrieved from ...
 
-To get started, create some files, play with the terminal,
-or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
+### Media
+The cover picture was taken from the online image library [Pixabay](https://pixabay.com/).
 
-Happy coding!
+### Acknowledgements
+
+The navbar was retrieved from the Bootstrap [documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/) and then altered and customized for this site.

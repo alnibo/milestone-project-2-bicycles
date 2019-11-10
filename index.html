@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bicycle crashes in Chapel Hill</title>
+    <title>Chapel Hill Bicycle crashes</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/dc.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
@@ -16,24 +17,60 @@
     <script type="text/javascript" src="assets/js/dc.min.js"></script>
     <script type="text/javascript" src="assets/js/queue.min.js"></script>
     <script type="text/javascript" src="assets/js/graph.js"></script>
+    <script type="text/javascript" src="assets/js/helper-reset.js"></script>
 </head>
 
-<body>
+<body id="top-of-page">
 
     <!--********** Navbar **********-->
 
-    <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Bicycle crashes</a>
-        <button class="navbar-toggler navbar-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-sm navbar-light fixed-top">
+        <a class="navbar-brand" href="index.html">
+            <i class="fa fa-bicycle" aria-hidden="true"></i>Chapel Hill Bicycle Crashes
+        </a>
+
+        <!--<a class="navbar-brand" href="index.html">Chapel Hill Bicycle Crashes</a>-->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <!--<a class="nav-link" href="">Help</a>-->
+                    <button id="help-button" class="nav-link nav-button">Help</button>
+                </li>
+                <li class="nav-item">
+                    <!--<a class="nav-link" id="reset-button" href="">Reset data</a>-->
+                    <button id="reset-button" class="nav-link nav-button">Reset all</button>
+                </li>
+            </ul>
+        </div>
+
+        <!--<div class="collapse navbar-collapse" id="navbarNavDropdown">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="#">Help</a>
                 <a class="nav-item nav-link" href="#">Reset data</a>
             </div>
-        </div>
+        </div>-->
     </nav>
+
+    <!--********** Help window **********-->
+
+    <div id="help-modal" class="help-window">
+        <div class="help-box">
+            <div class="help-header">
+                <h2>Help - how to use this dashboard</h2>
+                <span class="help-close"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+            </div>
+            <div class="help-content">
+                <p>Using interactive charts and statistical numbers this dashboard illustrates Chapel Hill's bicycle crashes between 2007-2013. By clicking onto a section of most of these charts the data can be filtered to that specific data segment. All other graphs will synchronize and also display data to the specific section. By clicking on multiple sections, the combined data results can be viewed across all charts.</p>
+                <p>The data can be reset at anytime by clicking the "Reset all" button at in the navigation bar on the top of the screen. This will be visible at any time, even as you scroll down the page. When in mobile use the "Reset all" button is accessible through the drowndown button on the top right corner.</p>
+                <p>The data was retrieved from <a href="https://catalog.data.gov/dataset/bicycle-crashes">Data.gov</a>, where the original data set can be found. Some columns of the data set were removed as they were not needed for this project.</p>
+            </div>
+        </div>
+    </div>
 
     <!--********** Content **********-->
 
@@ -45,8 +82,8 @@
 
         <section class="container-fluid intro-container">
             <div class="row justify-content-center">
-                <p class="col-lg-10 col-md-12 introduction">This data set maps the locations of crashes involving bicyclists in the Chapel Hill Region of North Carolina.The data comes from police-reported bicycle-motor vehicle and pedestrian-motor vehicle collisions that occurred on the public
-                    roadway network, public vehicular areas and private properties (if reported) from January 2007 through December 2013.</p>
+                <p class="col-lg-10 col-md-12 introduction">This data set holds information about crashes involving bicyclists in the Chapel Hill Region of North Carolina in the US. The data comes from police-reported bicycle-motor vehicle and pedestrian-motor vehicle collisions that occurred on
+                    the public roadway network, public vehicular areas and private properties (if reported) from January 2007 through December 2013.</p>
             </div>
         </section>
 
@@ -55,21 +92,22 @@
         <section class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-md-12 stats-box">
-                    <h2 class="stats-title">Total number of incidents between 2007-2013</h2>
+                    <h2 class="stats-title">Total number of crashes between 2007-2013</h2>
                     <h3 class="stats-number">164</h3>
-                    <p>There has been just over 23 bicycle incidents on average in Chapel Hill per year.</p>
+                    <!--<div id="crash-number"></div>-->
+                    <p>There has been just over 23 bicycle crashes on average in Chapel Hill per year.</p>
                 </div>
 
                 <div class="col-lg-3 col-md-12 stats-box">
-                    <h2 class="stats-title">Percentage of urban vs. rural incidents</h2>
+                    <h2 class="stats-title">Percentage of urban vs. rural crashes</h2>
                     <div id="urban-rural-number" class="stats-number"></div>
-                    <p>The majority of bicycle incidents happened in the city, while only 17% happened outside of the city.</p>
+                    <p>The majority of bicycle crashes happened in the city, while only 17% happened outside of the city.</p>
                 </div>
 
                 <div class="col-lg-3 col-md-12 stats-box">
                     <h2 class="stats-title">Percentage of Hit and Run incidents</h2>
                     <div id="hit-run-number" class="stats-number"></div>
-                    <p>15% of the total number of vehicle drivers involved in bicycle incidents fled and didn't report to the police.</p>
+                    <p>15% of the total number of vehicle drivers involved in bicycle crashes fled and didn't report to the police.</p>
                 </div>
             </div>
         </section>
@@ -79,21 +117,21 @@
         <section class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-md-12 stats-box">
-                    <h2 class="stats-title">Gender distribution of bikers involved in incidents</h2>
+                    <h2 class="stats-title">Gender distribution of bikers involved in crashes</h2>
                     <div id="gender-pie-bike"></div>
-                    <p>The majority of bikers involved in incidents were men.</p>
+                    <p>The majority of bikers involved in crashes were men.</p>
                 </div>
 
                 <div class="col-lg-3 col-md-12 stats-box">
-                    <h2 class="stats-title">Gender distribution of vehicle drivers involved in incidents</h2>
+                    <h2 class="stats-title">Gender distribution of vehicle drivers involved in crashes</h2>
                     <div id="gender-pie-drvr"></div>
-                    <p>The majority of vehicle drivers involved in incidents were men, while 15% are unknown due to hit and run incidents.</p>
+                    <p>The majority of vehicle drivers involved in crashes were men, while 15% are unknown due to hit and run incidents.</p>
                 </div>
 
                 <div class="col-lg-3 col-md-12 stats-box">
-                    <h2 class="stats-title">Age distribution of bikers involved in incidents</h2>
+                    <h2 class="stats-title">Age distribution of bikers involved in crashes</h2>
                     <div id="pie-age-class"></div>
-                    <p>The majority of bikers involved in incidents were between 21 and 40 years.</p>
+                    <p>The majority of bikers involved in crashes were between 21 and 40 years.</p>
                 </div>
             </div>
         </section>
@@ -101,65 +139,27 @@
         <!--********** Year selector **********-->
 
         <section class="container-fluid year-selec-container">
-            <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <h2 class="stats-number">Select year of incidents</h2>
-                    <div class="year-selector-box" id="year-selector"></div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12 year-selector-box">
+                    <h2 class="stats-number">Select year of crash</h2>
+                    <div class="year-selector-dropdown" id="year-selector"></div>
+                    <p>In order to analyse one specific year, please select a year from the dropdown menu. All charts will then only show information for that selected year. To show information for all years please select "Select all" from the dropdown menu
+                        or press the "Reset all" button on top of the page.</p>
                 </div>
-        </section>        
+            </div>
+        </section>
 
-        <!--********** Bar Chart **********-->
+        <!--********** Months Bar Chart **********-->
 
         <section class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-md-12 graph-box">
-                    <h2 class="stats-title">Distribution of bicycle incidents over the year</h2>
-                    <p>The following chart shows during which moths the most crashes happend. Please click on the individual bars to filter the data so that the other charts will only show information for that selected year.</p>
+                    <h2 class="stats-title">Distribution of bicycle crashes over the year</h2>
+                    <p class="chart-intro">The following chart shows during which months the most crashes happened. Please click on the individual bars to filter the data so that the other charts will only show information for that selected month.</p>
                     <div id="crash-month"></div>
-                    <p>On the one hand crashes spiked up in April after winters. More and more start using their bikes again while, but roads might still be icey and there is usually a lot of rain in April. Most crashes on the other hand can be seen after
-                        summer in September. There might still be many who use their bike at that time, but the days are getting shorter again, which makes it difficult for drivers to see bikers.</p>
-                </div>
-            </div>
-        </section>
+                    <p class="chart-description">On the one hand crashes spiked up in April after winters. More and more start using their bikes again while, but roads might still be icey and there is usually a lot of rain in April. Most crashes on the other hand can be seen after
+                        summer in September. There might still be many who use their bike at that time, but the days are getting shorter again, which can make it more difficult for drivers to see bikers.</p>
 
-        <!--********** Row Chart **********-->
-
-        <section class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 col-md-12 graph-box">
-                    <h2 class="stats-title">Distribution of bicycle incidents over the year</h2>
-                    <p>The following chart shows during which moths the most crashes happend. Please click on the individual bars to filter the data so that the other charts will only show information for that selected year.</p>
-                    <div id="crash-city"></div>
-                    <p>On the one hand crashes spiked up in April after winters. More and more start using their bikes again while, but roads might still be icey and there is usually a lot of rain in April. Most crashes on the other hand can be seen after
-                        summer in September. There might still be many who use their bike at that time, but the days are getting shorter again, which makes it difficult for drivers to see bikers.</p>
-                </div>
-            </div>
-        </section>
-
-        <!--********** Crash Severeness Row Chart **********-->
-
-        <section class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 col-md-12 graph-box">
-                    <h2 class="stats-title">Distribution of bicycle incidents over the year</h2>
-                    <p>The following chart shows during which moths the most crashes happend. Please click on the individual bars to filter the data so that the other charts will only show information for that selected year.</p>
-                    <div id="crash-severeness"></div>
-                    <p>On the one hand crashes spiked up in April after winters. More and more start using their bikes again while, but roads might still be icey and there is usually a lot of rain in April. Most crashes on the other hand can be seen after
-                        summer in September. There might still be many who use their bike at that time, but the days are getting shorter again, which makes it difficult for drivers to see bikers.</p>
-                </div>
-            </div>
-        </section>
-
-        <!--********** Crash Hour Bar Chart **********-->
-
-        <section class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 col-md-12 graph-box">
-                    <h2 class="stats-title">Distribution of bicycle incidents over the year</h2>
-                    <p>The following chart shows during which moths the most crashes happend. Please click on the individual bars to filter the data so that the other charts will only show information for that selected year.</p>
-                    <div id="crash-hour"></div>
-                    <p>On the one hand crashes spiked up in April after winters. More and more start using their bikes again while, but roads might still be icey and there is usually a lot of rain in April. Most crashes on the other hand can be seen after
-                        summer in September. There might still be many who use their bike at that time, but the days are getting shorter again, which makes it difficult for drivers to see bikers.</p>
                 </div>
             </div>
         </section>
@@ -169,63 +169,87 @@
         <section class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-md-12 graph-box">
-                    <h2 class="stats-title">Distribution of bicycle incidents over the year</h2>
-                    <p>The following chart shows during which moths the most crashes happend. Please click on the individual bars to filter the data so that the other charts will only show information for that selected year.</p>
+                    <h2 class="stats-title">Time of day of bicycle crashes</h2>
+                    <p class="chart-intro">The following line chart shows the daily distribution of bicycle crashes. Hover over the line at each hour to see the number of crashes that occurred at that particular time.</p>
                     <div id="crash-hour-line"></div>
-                    <p>On the one hand crashes spiked up in April after winters. More and more start using their bikes again while, but roads might still be icey and there is usually a lot of rain in April. Most crashes on the other hand can be seen after
-                        summer in September. There might still be many who use their bike at that time, but the days are getting shorter again, which makes it difficult for drivers to see bikers.</p>
+                    <p class="chart-description">While there were only few crashes during the night, the number of crashes increased from 5am onwards when people start going to work. However, most crashes happened in the afternoon between 3pm and 7pm.</p>
                 </div>
             </div>
         </section>
-        
-        <!--********** Circular Bar Chart **********-->
+
+        <!--********** Crash Severeness Row Chart **********-->
 
         <section class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-md-12 graph-box">
-                    <h2 class="stats-title">Distribution of bicycle incidents over the year</h2>
-                    <p>The following chart shows during which moths the most crashes happend. Please click on the individual bars to filter the data so that the other charts will only show information for that selected year.</p>
-                    <div id="line-chart"></div>
-                    <p>On the one hand crashes spiked up in April after winters. More and more start using their bikes again while, but roads might still be icey and there is usually a lot of rain in April. Most crashes on the other hand can be seen after
-                        summer in September. There might still be many who use their bike at that time, but the days are getting shorter again, which makes it difficult for drivers to see bikers.</p>
+                    <h2 class="stats-title">Injury severeness of bicycle crashes</h2>
+                    <p class="chart-intro">The following chart shows the injury severeness of bicycle crashes. Please click on the individual bars to filter the data so that the other charts will only show information for the selected injury severeness.</p>
+                    <div id="crash-severeness"></div>
+                    <p class="chart-description">Most of the bikers involved in a crash were injured and around 2% were even killed. In only around 4% of all bicycle crashes were bikers not injured. Bikers and car drivers need to be more carefull in order to avoid these dangerous
+                        incidents.</p>
                 </div>
             </div>
         </section>
-        
-        
 
+        <!--********** Crash Hour Bar Chart **********-->
 
         <section class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-lg-5 col-md-12 stats-box">
-                    <div id="urban-rural-pie"></div>
-                </div>
-                <div class="col-lg-5 col-md-12 stats-box">
-
+                <div class="col-lg-10 col-md-12 graph-box">
+                    <h2 class="stats-title">Time of bicycle crashes</h2>
+                    <p class="chart-intro">The following chart shows the daily distribution of bicycle crashes.</p>
+                    <div id="crash-hour"></div>
+                    <p class="chart-description">Most crashes happened in the afternoon between 3pm and 7pm.</p>
                 </div>
             </div>
         </section>
 
-        <div class="row">
-            <div id="crash-day"></div>
-        </div>
+        <!--********** Crash Hour Composite Chart per Weekday **********-->
 
-        <div class="row">
-            <div id="graph3"></div>
-        </div>
-
-        <div class="row">
-            <div id="crash-time"></div>
-        </div>
-        <div class="row">
-            <div id="type-vehicle"></div>
-        </div>
-
-        <section>
-            <div id="time"></div>
+        <section class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12 graph-box">
+                    <h2 class="stats-title">Time of crashes for each weekday</h2>
+                    <p class="chart-intro">The following chart shows the time of the crashes for each weekday.</p>
+                    <div id="time"></div>
+                    <p class="chart-description"></p>
+                </div>
+            </div>
         </section>
+
+        <!--********** Area Row Chart **********-->
+
+        <section class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12 graph-box">
+                    <h2 class="stats-title">Area of bicycle crashes</h2>
+                    <p class="chart-intro">The following chart shows in which area crashed occurred. Please click on the individual bars to filter the data so that the other charts will only show information for that selected area.</p>
+                    <div id="crash-city"></div>
+                    <p class="chart-description">83% of bicycle crashes occured in city areas, while 17% occurred in rural areas. Especially Chappel Hill needs to address this problem, as most of the crashes have happened in Chapel Hill.</p>
+                </div>
+            </div>
+        </section>
+
+        <!--********** Back to Top Button **********-->
+
+        <section class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12 back-to-top">
+                    <a href="#top-of-page" class="btn btn-light back-to-top-button">Back to top<i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
+    <footer class="container-fluid">
+        <div class="footer-text">
+            <p>This website was created for educational purposes.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 
 </html>
