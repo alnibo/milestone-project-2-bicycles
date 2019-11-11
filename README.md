@@ -18,7 +18,9 @@ Check out the deployed website [here]( https://alnibo.github.io/milestone-projec
 
 ## UX
 
-As part of the design process wireframes were created to visualise and give an outline of the structures and layouts. They can be viewed [here]().
+The goal for this website was to provide information for anyone who is interested in and wants to find out more about how safe it is to cycle in Chapel Hill.
+
+As part of the design process wireframes were created to visualise and give an outline of the structures and layouts for both the mobile and desktop view. They can be viewed [here](https://github.com/alnibo/milestone-project-2-bicycles/tree/master/assets/wireframes).
 
 ## Features
 
@@ -44,6 +46,12 @@ The crashes could be displayed on a map in order to demonstrate which areas are 
 
 ## Testing
 
+This website was manually tested from the perspective of a first time user navigating through the site verifying that all links and buttons correctly function.
+
+Ensuring its responsiveness this website was tested across different mobile devices. In a second step it was then tested across the most common internet browsers (Safari, Chrome, Internet Explorer, and Firefox), making sure it is compatible. For an overview, please see this excel file [here]().
+
+During the testing procedure it became clear that some media queries need to be created in order to maintain a good design across all screen sizes.
+
 ## Deployment
 
 This site is hosted using GitHub pages, deployed directly from the master branch. The deployed site will update automatically upon new commits to the master branch. 
@@ -65,7 +73,5 @@ The town seal of Chapel Hill used in the navbar was retrieved form [here](https:
 The navbar was retrieved from the Bootstrap [documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/) and then altered and customized for this site.
 
 The inspiration for the general layout came from this [project](https://github.com/Angie55/IFD_Milestone_Project_Two_Dashboard).
-
-The charts were built 
 
 The help modal was built with this template [How To Create a Modal Box](https://www.w3schools.com/howto/howto_css_modals.asp).
