@@ -10,7 +10,7 @@
 
 Stream Two Project - Interactive Frontend Development - Code Institute
 
-This dashboard 
+This dashboard aims at providing information about bicycle crahes in Chapel Hill for the years of 2007-2013. With simple numbers and graphic displays should make it easy for the user to find out more about each crash. Interactive charts provide the user the possibility to select segments of the data they are interested in and analyse these in greater detail.
 
 ## Demo
 
@@ -18,13 +18,23 @@ Check out the deployed website [here]( https://alnibo.github.io/milestone-projec
 
 ## UX
 
-The goal for this website was to provide information for anyone who is interested in and wants to find out more about how safe it is to cycle in Chapel Hill.
+The goal for this website was to provide information for anyone who wants to find out more about bicycle crashes in Chapel Hill and thereby know what and where to look out for and how to be more cautious.
+
+Simple and clear charts that are interactive should help the user to understand the data and easily analyse it in more detail.
+
+In order to present the infromation in a clear and easy way, a modern look with light colors and a simple desgin was chosen.
+
+When analysing the data it is important to reset the data at any time. For this a "Reset all" button was added to the navigation bar, which is fixed at the top of the page. On mobile use it is accessible through the dropdown toggle button.
+
+A help modal was added, which can be accessed hrough the "Help" button in the navigation bar on the top. A pop-up window appears, where the user can find information on how to use the website. I can be closed by either clicking the close button at the top right corner or by clicking anywhere outside the help window.
+
+To enhance user experience a button was added on the bottom of the page in order to jump back up to the top.
 
 As part of the design process wireframes were created to visualise and give an outline of the structures and layouts for both the mobile and desktop view. They can be viewed [here](https://github.com/alnibo/milestone-project-2-bicycles/tree/master/assets/wireframes).
 
 ## Features
 
-1. Interactive Charts using 
+1. Interactive Charts using DC, D3 and crossfilter.
 2. Responsive design using the Bootstrap Grid system, making sure the website is compatible on all screen sizes
 3. Fixed navbar, which collapses when in mobile use, so as not to overgrowd the screen
 
