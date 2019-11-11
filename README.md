@@ -58,6 +58,8 @@ The crashes could be displayed on a map in order to demonstrate which areas are 
 
 This website was manually tested from the perspective of a first time user navigating through the site verifying that all links and buttons correctly function.
 
+As part of the testing procedure this website was tested with https://validator.w3.org/. A few errors and several warnings were displayed in the CSS file due to the boostrap link.
+
 Ensuring its responsiveness this website was tested across different mobile devices. In a second step it was then tested across the most common internet browsers (Safari, Chrome, Internet Explorer, and Firefox), making sure it is compatible. For an overview, please see this excel file [here]().
 
 During the testing procedure it became clear that some media queries need to be created in order to maintain a good design across all screen sizes.
