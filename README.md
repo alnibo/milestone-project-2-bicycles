@@ -18,7 +18,7 @@ Check out the deployed website [here]( https://alnibo.github.io/milestone-projec
 
 ## UX
 
-The goal for this website was to provide information for anyone who wants to find out more about bicycle crashes in Chapel Hill and thereby know what and where to look out for and how to be more cautious.
+The goal for this website was to provide information for anyone who wants to find out more about bicycle crashes in Chapel Hill. When and where do these crashes typically happen? Who is involved in these crashes? Being aware of all that cyclists and vehicule drivers may have a better understanding on what and where to look out for and how to be more cautious.
 
 Simple and clear charts that are interactive should help the user to understand the data and easily analyse it in more detail.
 
@@ -34,9 +34,14 @@ As part of the design process wireframes were created to visualise and give an o
 
 ## Features
 
-1. Interactive Charts using DC, D3 and crossfilter.
-2. Responsive design using the Bootstrap Grid system, making sure the website is compatible on all screen sizes
-3. Fixed navbar, with a responsive brand name that disapears for smaller screen sizes, but buttons that are always accessible
+1. Interactive Charts using DC, D3 and crossfilter
+    1. Pie and donut Charts - showing gender and age distributions 
+    2. Bar Chart - illustrating the distribution over the year by month
+    3. Row Charts - displaying injury severnesses and bicycle crash areas
+    4. Composite Line Chart - showing the time of crashes for each day
+2. Selector that enables users to analyse the data for each year 
+3. Responsive design using the Bootstrap Grid system, making sure the website is compatible on all screen sizes
+4. Fixed navbar, with a responsive brand name that disapears for smaller screen sizes, but buttons that are always accessible
 
 ### Features left to implement
 
@@ -51,6 +56,7 @@ The data could be compared to a dataset from a different region.
 3. Bootstrap (4.3.1)
 4. JavaScript
 5. Font Awesome
+6. Google Fonts
 6. D3.js
 7. DC.js
 8. Crossfilter.js

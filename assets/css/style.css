@@ -1,5 +1,10 @@
 body {
     padding-top: 55px;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
 }
 
 /* ************************************************** Navbar */
@@ -10,6 +15,10 @@ body {
     height: 55px;
     background-color: rgb(240, 240, 240, 0.9);
     border: 0;
+}
+
+.navbar-brand {
+    font-weight: 500;
 }
 
 .navbar-brand img {
@@ -227,7 +236,6 @@ div.dc-chart {
     font-size: 25px;
     padding-top: 10px;
     padding-bottom: 10px;
-    /*color: #C21807;*/
 }
 
 .chart-intro {
@@ -289,7 +297,7 @@ footer {
    }
 }
 
-@media (min-width:470px) {
+@media (min-width:488px) {
     .top-header {
         top: 87%;
     }
@@ -307,7 +315,7 @@ footer {
     }
 }
 
-@media (min-width:524px) {
+@media (min-width:555px) {
     .top-header {
         font-size: 28px;
         top: 86%;

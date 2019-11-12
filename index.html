@@ -7,10 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chapel Hill Bicycle crashes</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/dc.min.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/dc.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <link rel="shortcut icon" href="assets/images/town.png">
 
     <script src="assets/js/d3.min.js"></script>
@@ -53,10 +54,13 @@
                 <span class="help-close"><i class="fa fa-window-close" aria-hidden="true"></i></span>
             </div>
             <div class="help-content">
-                <p>Using interactive charts and statistical numbers this dashboard illustrates Chapel Hill's bicycle crashes between 2007-2013. By clicking onto a section of most of these charts the data can be filtered to that specific data segment. All
-                    other graphs will synchronize and also display data to the specific section. By clicking on multiple sections, the combined data results can be viewed across all charts.</p>
-                <p>The data can be reset at anytime by clicking the "Reset" button in the navigation bar on the top of the screen. It will be visible at any time, even as you scroll down the page.</p>
-                <p>The data was retrieved from <a target="_blank" href="https://catalog.data.gov/dataset/bicycle-crashes">Data.gov</a>, where the original data set can be found. Some columns of the data set were removed as they were not needed for this project.</p>
+                <p>Using interactive charts and statistical numbers this dashboard illustrates Chapel Hill's bicycle crashes between 2007-2013. By clicking onto a section of the charts the data can be filtered to that selected data segment. All other graphs
+                    will synchronize and also display data corresponding to the selected section. By clicking on multiple sections, the combined data results can be viewed across all charts.</p>
+                <p>For the composite line chart it is not possible to select data segments by clicking onto the chart. It is however possible to hover over each of the lines at each hour to see how many crashes occurred at that time of day. Additionally
+                    it is possible to hover over one of the days in the legend in the top left corner of the graph in order to highlight the line chart for that specific day.</p>
+                <p>The data can be reset at anytime by clicking the "Reset" button in the navigation bar on the top of the page. The button will be visible at any time, even as you scroll down the page.</p>
+                <p>For reasons of simplification a column for the time of day was added and some columns of the data set were removed as they were not needed for this project. The data was retrieved from <a target="_blank" href="https://catalog.data.gov/dataset/bicycle-crashes">Data.gov</a>,
+                    where the original data set can be found.</p>
             </div>
         </div>
     </div>
@@ -72,8 +76,12 @@
         <section class="container-fluid">
             <div class="container-fluid intro-container">
                 <div class="row justify-content-center">
-                    <p class="col-lg-10 col-md-12 introduction">This data set holds information about crashes involving bicyclists in the Chapel Hill Region of North Carolina in the US. The data comes from police-reported bicycle-motor vehicle and pedestrian-motor vehicle collisions that occurred
-                        on the public roadway network, public vehicular areas and private properties (if reported) from January 2007 through December 2013.</p>
+                    <div class="col-lg-10 col-md-12 introduction">
+                        <p>This dashboard illustrates a data set with information about crashes involving bicyclists in the Chapel Hill Region of North Carolina in the US. The data comes from police-reported bicycle-motor vehicle and pedestrian-motor vehicle
+                            collisions that occurred on the public roadway network, public vehicular areas and private properties (if reported) from January 2007 through December 2013.</p>
+                        <p>Following number and chart displays will give information for these crashes, especially interesting for cyclists and vehicle drivers from that region. By clicking on the interactive charts it is possible to analyse the data in
+                            greater detail. Please press the "Help" button on the top for more details.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -85,7 +93,6 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-3 col-md-12 stats-box">
                         <h2 class="stats-title">Total number of crashes between 2007-2013</h2>
-                        <!--<h3 class="stats-number">164</h3>-->
                         <div id="crash-number" class="stats-number"></div>
                         <p>There has been just over 23 bicycle crashes on average in Chapel Hill per year.</p>
                     </div>
@@ -187,9 +194,11 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10 col-md-12 graph-box">
                         <h2 class="chart-title">Time of crashes for each weekday</h2>
-                        <p class="chart-intro">The following chart shows the time of the crashes for each weekday respectively. Hover over one of the days in the legend in the top left corner to highlight the line chart for this day. Hover over one of the lines at each hour to see the number of crashes that occurred at that particular time.</p>
+                        <p class="chart-intro">The following chart shows the time of the crashes for each weekday respectively. Hover over one of the days in the legend in the top left corner to highlight the line chart for this day. Hover over one of the lines at each hour
+                            to see the number of crashes that occurred at that particular time.</p>
                         <div id="crash-time"></div>
-                        <p class="chart-description">While there were only few crashes during the night, the number of crashes increased from 5am onwards when people start going to work. However, most crashes happened in the afternoon between 3pm and 7pm. This is escpecially true for weekdays. On Saturdays and Sundays we can see that crashes happened less frequently.</p>
+                        <p class="chart-description">While there were only few crashes during the night, the number of crashes increased from 5am onwards when people start going to work. However, most crashes happened in the afternoon between 3pm and 7pm. This is escpecially true
+                            for weekdays. On Saturdays and Sundays we can see that crashes happened less frequently.</p>
                     </div>
                 </div>
             </div>
@@ -228,8 +237,6 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 
 </html>
