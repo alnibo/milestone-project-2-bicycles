@@ -191,7 +191,7 @@ function pie_age_class(ndx) {
         .innerRadius(40)
         .dimension(ageDim)
         .group(ageGroup)
-        .externalLabels(-1)
+        .externalLabels(7)
         .drawPaths(false)
         .colors(pieColors)
         .on('pretransition', function(chart) {

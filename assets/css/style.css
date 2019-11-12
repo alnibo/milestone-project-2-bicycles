@@ -8,7 +8,7 @@ body {
     margin-bottom: 0;
     width: 100%;
     height: 55px;
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(240, 240, 240, 0.9);
     border: 0;
 }
 
@@ -30,8 +30,20 @@ body {
 }
 
 .nav-button {
-    border: none;
+    width: 90px;
+    margin-right: 10px;
     background-color: transparent;
+    border-radius: 5px;
+    border-color: transparent;
+}
+
+.nav-button:hover {
+    background-color: grey;
+    color: rgb(240, 240, 240);
+}
+
+.nav-button:focus {
+    outline: 0;
 }
 
 /* ************************************************** Help window */
@@ -133,7 +145,7 @@ body {
     text-align: center;
 }
 
-/* ************************************************** Stat Numbers */
+/* ************************************************** Stat Numbers and Pie Charts */
 
 .stats-box {
     padding: 10px;
@@ -159,10 +171,27 @@ div.dc-chart {
     float: none!important;
 }
 
-.dc-chart g.row text {
-    fill: black;
-    font-size: 25px;
+.pie-label._0.external {
+    transform: translate(60px,3px);
 }
+
+.pie-label._1.external {
+    transform: translate(-50px,45px);
+}
+
+.pie-label._2.external {
+    transform: translate(-65px,-10px);
+}
+
+.pie-label._3.external {
+    transform: translate(-50px,-81px);
+}
+
+.pie-label._4.external {
+    transform: translate(-2px,-95px);
+}
+
+/* ************************************************** Selector */
 
 .year-selec-container {
     padding-top: 40px;
@@ -214,6 +243,11 @@ div.dc-chart {
     padding-top: 20px;
 }
 
+.dc-chart g.row text {
+    fill: black;
+    font-size: 20px;
+}
+
 /* ************************************************** Back to Top Button */
 
 .back-to-top {
@@ -246,7 +280,7 @@ footer {
 
 /* ************************************************** Media Queries */
 
-@media (min-width:336px) {
+@media (min-width:378px) {
    .nav-no-name {
        display: none;
    }

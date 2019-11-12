@@ -1,6 +1,6 @@
 window.onload = function() {
   
-  /* ************************************************** Help page */
+  /* ************************************************** Help window */
   
   var modal = document.getElementById("help-modal");
   var btn = document.getElementById("help-button");
