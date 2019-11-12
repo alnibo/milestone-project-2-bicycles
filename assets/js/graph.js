@@ -20,13 +20,9 @@ function makeGraphs(error, bicycleData) {
     yearSelector(ndx);
 
     crash_month(ndx);
-    crash_hour_line(ndx);
     crash_severeness(ndx);
-    
-    crash_hour(ndx);
-    show_time(ndx);
-    crash_city(ndx);
-
+    crash_time(ndx);
+    crash_area(ndx);
     
     dc.renderAll();
 }
@@ -236,29 +232,6 @@ function crash_month(ndx) {
         .xAxisLabel("Month");
 }
 
-/* ************************************************** Crash Hour Line Chart */
-
-function crash_hour_line(ndx) {
-    var dim = ndx.dimension(dc.pluck('crash_hour'));
-    var group = dim.group();
-
-    dc.lineChart("#crash-hour-line")
-        .width(1000)
-        .height(400)
-        .margins({ top: 30, right: 50, bottom: 30, left: 50 })
-        .useViewBoxResizing(true)
-        .dimension(dim)
-        .group(group)
-        .transitionDuration(500)
-        .colors(['#C21807'])
-        .clipPadding(20)
-        .x(d3.scale.ordinal().domain(["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"]))
-        .xUnits(dc.units.ordinal)
-        .elasticY(true)
-        .yAxisLabel("No. of crashes")
-        .xAxisLabel("Time of Crash");
-}
-
 /* ************************************************** Severeness row chart */
 
 function crash_severeness(ndx) {
@@ -282,33 +255,9 @@ function crash_severeness(ndx) {
         .renderLabel(true);
 }
 
-/* ************************************************** Crash hour bar chart */
-
-function crash_hour(ndx) {
-    var dim = ndx.dimension(dc.pluck('crash_hour'));
-    var group = dim.group();
-
-    dc.barChart("#crash-hour")
-        .width(1000)
-        .height(400)
-        .margins({ top: 30, right: 50, bottom: 30, left: 50 })
-        .useViewBoxResizing(true)
-        .dimension(dim)
-        .group(group)
-        .transitionDuration(500)
-        .colors(['#C21807'])
-        .clipPadding(20)
-        .renderLabel(true)
-        .x(d3.scale.ordinal().domain(["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"]))
-        .xUnits(dc.units.ordinal)
-        .elasticY(true)
-        .yAxisLabel("No. of crashes")
-        .xAxisLabel("Time of Crash");
-}
-
 /* ************************************************** Crash hour composite chart */
 
-function show_time(ndx) {
+function crash_time(ndx) {
 
     var hour_dim = ndx.dimension(dc.pluck('crash_hour'));
     
@@ -317,62 +266,62 @@ function show_time(ndx) {
 
     var mondayCrashes = hour_dim.group().reduceSum(function(d) {
         if (d.crashday === 'Monday') {
-            return +d.crash_hour;
+            return +1;
         }
         else {
-            return 0;
+            return +0;
         }
     });
     var tuesdayCrashes = hour_dim.group().reduceSum(function(d) {
         if (d.crashday === 'Tuesday') {
-            return +d.crash_hour;
+            return +1;
         }
         else {
-            return 0;
+            return +0;
         }
     });
     var wednesdayCrashes = hour_dim.group().reduceSum(function(d) {
         if (d.crashday === 'Wednesday') {
-            return +d.crash_hour;
+            return +1;
         }
         else {
-            return 0;
+            return +0;
         }
     });
     var thursdayCrashes = hour_dim.group().reduceSum(function(d) {
         if (d.crashday === 'Thursday') {
-            return +d.crash_hour;
+            return +1;
         }
         else {
-            return 0;
+            return +0;
         }
     });
     var fridayCrashes = hour_dim.group().reduceSum(function(d) {
         if (d.crashday === 'Friday') {
-            return +d.crash_hour;
+            return +1;
         }
         else {
-            return 0;
+            return +0;
         }
     });
     var saturdayCrashes = hour_dim.group().reduceSum(function(d) {
         if (d.crashday === 'Saturday') {
-            return +d.crash_hour;
+            return +1;
         }
         else {
-            return 0;
+            return +0;
         }
     });
     var sundayCrashes = hour_dim.group().reduceSum(function(d) {
         if (d.crashday === 'Sunday') {
-            return +d.crash_hour;
+            return +1;
         }
         else {
-            return 0;
+            return +0;
         }
     });
 
-    var compositeChart = dc.compositeChart('#time');
+    var compositeChart = dc.compositeChart('#crash-time');
 
     compositeChart
         .width(1000)
@@ -415,16 +364,16 @@ function show_time(ndx) {
 
 /* ************************************************** Area row chart */
 
-function crash_city(ndx) {
+function crash_area(ndx) {
     var rowColours = d3.scale.ordinal()
         .range(['#7C0A02', '#C21807']);
 
     var dim = ndx.dimension(dc.pluck('city'));
     var group = dim.group();
 
-    dc.rowChart('#crash-city')
+    dc.rowChart('#crash-area')
         .width(1000)
-        .height(700)
+        .height(400)
         .useViewBoxResizing(true)
         .transitionDuration(1000)
         .x(d3.scale.ordinal())

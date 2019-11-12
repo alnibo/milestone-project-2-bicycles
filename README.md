@@ -42,6 +42,8 @@ As part of the design process wireframes were created to visualise and give an o
 
 The crashes could be displayed on a map in order to demonstrate which areas are most prone for bicycle collision.
 
+The data could be compared to a dataset from a different region.
+
 ## Technologies Used
 
 1. HTML
@@ -53,6 +55,8 @@ The crashes could be displayed on a map in order to demonstrate which areas are 
 7. DC.js
 8. Crossfilter.js
 9. Queue.js
+10. AWS Cloud9
+10. GitHub
 
 ## Testing
 
@@ -64,7 +68,7 @@ Ensuring its responsiveness this website was tested across different mobile devi
 
 During the testing procedure it became clear that some media queries need to be created in order to maintain a good design across all screen sizes.
 
-The donut chart was cutting off its labels at certain times. I resolved this issue by adjusting the values of `externalLabels` and `transform`, in order to display the values closer to the center and therefore not being cut off.
+The labels of the age donut chart were cut off at certain times. I resolved this issue by adjusting the values of `externalLabels` and `transform`, in order to display the values closer to the center and therefore not to get cut off.
 
 The link to the data set was manually tested. By using `target="_blank"` it was made sure that links will open in a new tab.
 
@@ -82,7 +86,7 @@ The data set of bicycle crashes was retrieved from [Data.gov](https://catalog.da
 ### Media
 The top header picture was taken from the online image library [Pixabay](https://pixabay.com/).
 
-The town seal of Chapel Hill used in the navbar was retrieved form [here](https://chapelhillpubliclibrary.org/town-seal/).
+The town seal of Chapel Hill used in the navbar and in the title bar as the icon logo was retrieved form [here](https://chapelhillpubliclibrary.org/town-seal/).
 
 ### Acknowledgements
 

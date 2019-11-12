@@ -87,7 +87,7 @@
                     <div class="col-lg-3 col-md-12 stats-box">
                         <h2 class="stats-title">Total number of crashes between 2007-2013</h2>
                         <h3 class="stats-number">164</h3>
-                        <!--<div id="crash-number"></div>-->
+                        <!--<div id="crash-number" class="stats-number"></div>-->
                         <p>There has been just over 23 bicycle crashes on average in Chapel Hill per year.</p>
                     </div>
 
@@ -164,21 +164,6 @@
             </div>
         </section>
 
-        <!--********** Crash Hour Line Chart **********-->
-
-        <section class="container-fluid">
-            <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 col-md-12 graph-box">
-                        <h2 class="chart-title">Time of day of bicycle crashes</h2>
-                        <p class="chart-intro">The following line chart shows the daily distribution of bicycle crashes. Hover over the line at each hour to see the number of crashes that occurred at that particular time.</p>
-                        <div id="crash-hour-line"></div>
-                        <p class="chart-description">While there were only few crashes during the night, the number of crashes increased from 5am onwards when people start going to work. However, most crashes happened in the afternoon between 3pm and 7pm.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!--********** Crash Severeness Row Chart **********-->
 
         <section class="container-fluid">
@@ -196,21 +181,6 @@
             </div>
         </section>
 
-        <!--********** Crash Hour Bar Chart **********-->
-
-        <section class="container-fluid">
-            <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 col-md-12 graph-box">
-                        <h2 class="chart-title">Time of bicycle crashes</h2>
-                        <p class="chart-intro">The following chart shows the daily distribution of bicycle crashes.</p>
-                        <div id="crash-hour"></div>
-                        <p class="chart-description">Most crashes happened in the afternoon between 3pm and 7pm.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!--********** Crash Hour Composite Chart per Weekday **********-->
 
         <section class="container-fluid">
@@ -218,9 +188,9 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10 col-md-12 graph-box">
                         <h2 class="chart-title">Time of crashes for each weekday</h2>
-                        <p class="chart-intro">The following chart shows the time of the crashes for each weekday.</p>
-                        <div id="time"></div>
-                        <p class="chart-description"></p>
+                        <p class="chart-intro">The following chart shows the time of the crashes for each weekday respectively. Hover over one of the days in the legend in the top left corner to highlight the line chart for this day. Hover over one of the lines at each hour to see the number of crashes that occurred at that particular time.</p>
+                        <div id="crash-time"></div>
+                        <p class="chart-description">While there were only few crashes during the night, the number of crashes increased from 5am onwards when people start going to work. However, most crashes happened in the afternoon between 3pm and 7pm. This is escpecially true for weekdays. On Saturdays and Sundays we can see that crashes happened less frequently.</p>
                     </div>
                 </div>
             </div>
@@ -234,7 +204,7 @@
                     <div class="col-lg-10 col-md-12 graph-box">
                         <h2 class="chart-title">Area of bicycle crashes</h2>
                         <p class="chart-intro">The following chart shows in which area crashed occurred. Please click on the individual bars to filter the data so that the other charts will only show information for that selected area.</p>
-                        <div id="crash-city"></div>
+                        <div id="crash-area"></div>
                         <p class="chart-description">83% of bicycle crashes occured in city areas, while 17% occurred in rural areas. Especially Chappel Hill needs to address this problem, as most of the crashes have happened in Chapel Hill.</p>
                     </div>
                 </div>
