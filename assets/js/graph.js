@@ -5,11 +5,7 @@ queue()
 function makeGraphs(error, bicycleData) {
     var ndx = crossfilter(bicycleData);
 
-    /*bicycleData.forEach(function(d){
-         d.crash_time = parseInt(d.crash_hour);
-    })*/
-    
-    // crash_number(ndx);
+    crash_number(ndx);
     urban_rural_number(ndx, "Urban", "#urban-rural-number");
     hit_run_number(ndx, "Yes", "#hit-run-number")
 
@@ -23,19 +19,17 @@ function makeGraphs(error, bicycleData) {
     crash_severeness(ndx);
     crash_time(ndx);
     crash_area(ndx);
-    
+
     dc.renderAll();
 }
 
 /* ************************************************** Stat Numbers */
 
-/*function crash_number(ndx) {
-    var all = ndx.groupAll();
-    
-    dc.dataCount("#crash-number")
-        .dimension(ndx)
-        .groupAll(all)
-}*/
+function crash_number(ndx) {
+    var totalNumber = ndx.groupAll().reduceCount().value()
+
+    document.getElementById("crash-number").innerHTML = totalNumber;
+}
 
 function urban_rural_number(ndx, urban, element) {
     var urbanPercent = ndx.groupAll().reduce(
@@ -57,7 +51,7 @@ function urban_rural_number(ndx, urban, element) {
             return { total: 0, urban_count: 0 };
         }
     );
-
+    
     dc.numberDisplay(element)
         .formatNumber(d3.format('%'))
         .valueAccessor(function(d) {
@@ -260,7 +254,7 @@ function crash_severeness(ndx) {
 function crash_time(ndx) {
 
     var hour_dim = ndx.dimension(dc.pluck('crash_hour'));
-    
+
     var minHour = hour_dim.bottom(1)[0].crash_hour;
     var maxHour = hour_dim.top(1)[0].crash_hour;
 

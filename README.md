@@ -10,7 +10,7 @@
 
 Stream Two Project - Interactive Frontend Development - Code Institute
 
-This dashboard aims at providing information about bicycle crahes in Chapel Hill for the years of 2007-2013. With simple numbers and graphic displays should make it easy for the user to find out more about each crash. Interactive charts provide the user the possibility to select segments of the data they are interested in and analyse these in greater detail.
+This dashboard aims at providing information about bicycle crahes in Chapel Hill for the years of 2007-2013. Simple numbers and graphic displays should make it easy for the user to find out more about each crash. Interactive charts provide the user the possibility to select segments of the data they are interested in and analyse them in greater detail.
 
 ## Demo
 
@@ -24,7 +24,7 @@ Simple and clear charts that are interactive should help the user to understand 
 
 In order to present the infromation in a clear and easy way, a modern look with light colors and a simple desgin was chosen.
 
-When analysing the data it is important to reset the data at any time. For this a "Reset all" button was added to the navigation bar, which is fixed at the top of the page and therefore always accessible.
+When analysing the data it is important to reset the data at any time. For this a "Reset" button was added to the navigation bar, which is fixed at the top of the page and therefore always accessible.
 
 A help modal was added, which can be accessed hrough the "Help" button in the navigation bar on the top. A pop-up window appears, where the user can find information on how to use the website. It can be closed by either clicking the close button at the top right corner or by clicking anywhere outside the help window.
 

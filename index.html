@@ -40,7 +40,7 @@
 
         <div class="nav-btns">
             <button id="help-button" class="nav-button">Help</button>
-            <button id="reset-button" class="nav-button">Reset all</button>
+            <button id="reset-button" class="nav-button">Reset</button>
         </div>
     </nav>
 
@@ -55,8 +55,7 @@
             <div class="help-content">
                 <p>Using interactive charts and statistical numbers this dashboard illustrates Chapel Hill's bicycle crashes between 2007-2013. By clicking onto a section of most of these charts the data can be filtered to that specific data segment. All
                     other graphs will synchronize and also display data to the specific section. By clicking on multiple sections, the combined data results can be viewed across all charts.</p>
-                <p>The data can be reset at anytime by clicking the "Reset all" button in the navigation bar on the top of the screen. It will be visible at any time, even as you scroll down the page. When in mobile use, the "Reset all" button is accessible
-                    through the drowndown button on the top right corner.</p>
+                <p>The data can be reset at anytime by clicking the "Reset" button in the navigation bar on the top of the screen. It will be visible at any time, even as you scroll down the page.</p>
                 <p>The data was retrieved from <a target="_blank" href="https://catalog.data.gov/dataset/bicycle-crashes">Data.gov</a>, where the original data set can be found. Some columns of the data set were removed as they were not needed for this project.</p>
             </div>
         </div>
@@ -86,8 +85,8 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-3 col-md-12 stats-box">
                         <h2 class="stats-title">Total number of crashes between 2007-2013</h2>
-                        <h3 class="stats-number">164</h3>
-                        <!--<div id="crash-number" class="stats-number"></div>-->
+                        <!--<h3 class="stats-number">164</h3>-->
+                        <div id="crash-number" class="stats-number"></div>
                         <p>There has been just over 23 bicycle crashes on average in Chapel Hill per year.</p>
                     </div>
 
@@ -141,7 +140,7 @@
                         <h2 class="chart-title">Select year of crash</h2>
                         <div class="year-selector-dropdown" id="year-selector"></div>
                         <p>In order to analyse one specific year, please select a year from the dropdown menu. All charts will then only show information for that selected year. To show information for all years please select "Select all" from the dropdown
-                            menu or press the "Reset all" button on top of the page.</p>
+                            menu or press the "Reset" button on top of the page.</p>
                     </div>
                 </div>
             </div>
