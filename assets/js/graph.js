@@ -5,7 +5,7 @@ queue()
 function makeGraphs(error, bicycleData) {
     var ndx = crossfilter(bicycleData);
 
-    crash_number(ndx);
+    // crash_number(ndx);
     urban_rural_number(ndx, "Urban", "#urban-rural-number");
     hit_run_number(ndx, "Yes", "#hit-run-number")
 
@@ -25,11 +25,11 @@ function makeGraphs(error, bicycleData) {
 
 /* ************************************************** Stat Numbers */
 
-function crash_number(ndx) {
+/*function crash_number(ndx) {
     var totalNumber = ndx.groupAll().reduceCount().value()
 
     document.getElementById("crash-number").innerHTML = totalNumber;
-}
+}*/
 
 function urban_rural_number(ndx, urban, element) {
     var urbanPercent = ndx.groupAll().reduce(
@@ -51,6 +51,12 @@ function urban_rural_number(ndx, urban, element) {
             return { total: 0, urban_count: 0 };
         }
     );
+    
+    dc.numberDisplay("#crash-number")
+        .valueAccessor(function(p) {
+            return p.total;
+        })
+        .group(urbanPercent);
     
     dc.numberDisplay(element)
         .formatNumber(d3.format('%'))
@@ -85,7 +91,7 @@ function hit_run_number(ndx, hitRun, element) {
             return { total: 0, hitRun_count: 0 };
         }
     );
-
+    
     dc.numberDisplay(element)
         .formatNumber(d3.format('%'))
         .valueAccessor(function(d) {

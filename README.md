@@ -96,6 +96,8 @@ The town seal of Chapel Hill used in the navbar and in the title bar as the icon
 
 ### Acknowledgements
 
+Information about the charts came from [here](https://dc-js.github.io/dc.js/examples/).
+
 The navbar was retrieved from the Bootstrap [documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/) and then altered and customized for this site.
 
 The inspiration for the general layout came from this [project](https://github.com/Angie55/IFD_Milestone_Project_Two_Dashboard).
