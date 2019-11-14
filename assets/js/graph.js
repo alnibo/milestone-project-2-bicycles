@@ -1,11 +1,11 @@
 queue()
-    .defer(d3.csv, "assets/data/bicycle-crash-data.csv")
+    .defer(d3.csv, "assets/data/bicycle-data.csv")
     .await(makeGraphs);
 
 function makeGraphs(error, bicycleData) {
     var ndx = crossfilter(bicycleData);
-
-    // crash_number(ndx);
+    
+    //crash_number(ndx);
     urban_rural_number(ndx, "Urban", "#urban-rural-number");
     hit_run_number(ndx, "Yes", "#hit-run-number")
 
@@ -51,13 +51,13 @@ function urban_rural_number(ndx, urban, element) {
             return { total: 0, urban_count: 0 };
         }
     );
-    
+        
     dc.numberDisplay("#crash-number")
-        .valueAccessor(function(p) {
-            return p.total;
+        .valueAccessor(function(d) {
+            return d.total;
         })
         .group(urbanPercent);
-    
+
     dc.numberDisplay(element)
         .formatNumber(d3.format('%'))
         .valueAccessor(function(d) {
