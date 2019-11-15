@@ -41,7 +41,7 @@ As part of the design process wireframes were created to visualise and give an o
     4. Composite Line Chart - showing the time of crashes for each day
 2. Selector that enables users to analyse the data for each year 
 3. Responsive design using the Bootstrap Grid system, making sure the website is compatible on all screen sizes
-4. Fixed navbar, with a responsive brand name that disapears for smaller screen sizes, but buttons that are always accessible
+4. Fixed navbar, with a responsive brand name that disapears for smaller screen sizes, but buttons that are always accessible to ensure best usability
 
 ### Features left to implement
 
@@ -112,7 +112,7 @@ The town seal of Chapel Hill used in the navbar and in the title bar as the icon
 
 Information about using dc.js and inspiration for charts came from [here](https://dc-js.github.io/dc.js/examples/).
 
-The navbar was retrieved from Bootstrap [documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/) and then altered and customized for this site.
+The navbar was retrieved from [Bootstrap documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/) and then altered and customized for this site.
 
 The inspiration for the general layout came from this [project](https://github.com/Angie55/IFD_Milestone_Project_Two_Dashboard).
 
