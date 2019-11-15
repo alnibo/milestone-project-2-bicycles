@@ -47,7 +47,7 @@ As part of the design process wireframes were created to visualise and give an o
 
 The crashes could be displayed on a map in order to demonstrate which areas are most prone for bicycle collision.
 
-The data could be compared to a dataset from a different region.
+The data could be compared to a dataset from a different region to see if there are any differences.
 
 ## Technologies Used
 
@@ -70,8 +70,6 @@ This website was manually tested from the perspective of a first time user navig
 
 As part of the testing procedure this website was tested with https://validator.w3.org/. A few errors and several warnings were displayed in the CSS file due to the boostrap link.
 
-The data csv-file was tested on this [website](https://csvlint.io/) and was found valid.
-
 Ensuring its responsiveness this website was tested across different mobile devices. In a second step it was then tested across the most common internet browsers (Safari, Chrome, Internet Explorer, and Firefox), making sure it is compatible. For an overview, please see this excel file [here](https://github.com/alnibo/milestone-project-2-bicycles/blob/master/assets/testing-wireframes/Testing-resp-comp.pdf).
 
 During the testing procedure it became clear that some media queries need to be created in order to maintain a good design across all screen sizes.
@@ -79,6 +77,16 @@ During the testing procedure it became clear that some media queries need to be 
 The labels of the age donut chart were cut off at certain times. I resolved this issue by adjusting the values of `externalLabels` and `transform`, in order to display the values closer to the center and therefore not to get cut off.
 
 The link to the data set was manually tested. By using `target="_blank"` it was made sure that links will open in a new tab.
+
+The number display of the amount of crashes in the top left of the page was first meant to be connected with the data and would have adjusted when selecting a data segment. For this following code was used and inserted in the urban_rural_number function in the js file.
+
+    `dc.numberDisplay("#crash-number")
+        .valueAccessor(function(d) {
+            return d.total;
+        })
+        .group(urbanPercent);`
+        
+While the number was now linked to the data and showing the amount of crashes when selecting a specific data segment it was displaying a wrong number in two cases. First, if nothing was selected - meaning it should display the amount of all crashes - it displayed 5 incidents too many. Second, when gender of biker "Male" was selected in the left pie chart it showed 3 cases to many. After being in contact with tutor support it turned out the code was correct, just that there might be a problem in the data set. However, no error was found when testing the csv-file on this [website](https://csvlint.io/). After checking the all the entries in the data file manually and finding no abnormalities I resolved to displaying a fixed number of all total crashes.
 
 ## Deployment
 
@@ -89,9 +97,11 @@ To run locally, you can clone this repository directly into the editor of your c
 ## Credits
 
 ### Data
+
 The data set of bicycle crashes was retrieved from [Data.gov](https://catalog.data.gov/dataset/bicycle-crashes).
 
 ### Media
+
 The top header picture was taken from the online image library [Pixabay](https://pixabay.com/).
 
 The town seal of Chapel Hill used in the navbar and in the title bar as the icon logo was retrieved form [here](https://chapelhillpubliclibrary.org/town-seal/).

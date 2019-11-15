@@ -235,12 +235,10 @@ div.dc-chart {
 .chart-title {
     font-size: 25px;
     padding-top: 10px;
-    padding-bottom: 10px;
-}
+    padding-bottom: 10px;}
 
 .chart-intro {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 0px;
 }
 
 .chart-description {
@@ -319,6 +317,12 @@ footer {
     .top-header {
         font-size: 28px;
         top: 86%;
+    }
+    .chart-intro {
+        padding: 10px 15px;
+    }
+    .chart-description {
+        padding: 20px 15px 0px;
     }
 }
 
