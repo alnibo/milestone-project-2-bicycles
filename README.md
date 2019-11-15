@@ -62,7 +62,7 @@ The data could be compared to a dataset from a different region to see if there 
 8. Crossfilter.js
 9. Queue.js
 10. AWS Cloud9
-10. GitHub
+10. Git & GitHub
 
 ## Testing
 
@@ -114,6 +114,6 @@ Information about using dc.js and inspiration for charts came from [here](https:
 
 The navbar was retrieved from [Bootstrap documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/) and then altered and customized for this site.
 
-The inspiration for the general layout came from this [project](https://github.com/Angie55/IFD_Milestone_Project_Two_Dashboard).
+The inspiration for the general layout came from this [project](https://github.com/Angie55/IFD_Milestone_Project_Two_Dashboard). From that project I also took the code for the composite chart as a starting base and then changed it to fit my needs.
 
 The help modal was built with this template [How To Create a Modal Box](https://www.w3schools.com/howto/howto_css_modals.asp).
