@@ -70,7 +70,7 @@ This website was manually tested from the perspective of a first time user navig
 
 As part of the testing procedure this website was tested with https://validator.w3.org/. A few errors and several warnings were displayed in the CSS file due to the boostrap link.
 
-Ensuring its responsiveness this website was tested across different mobile devices. In a second step it was then tested across the most common internet browsers (Safari, Chrome, Internet Explorer, and Firefox), making sure it is compatible. For an overview, please see this excel file [here](https://github.com/alnibo/milestone-project-2-bicycles/blob/master/assets/testing-wireframes/Testing-resp-comp.pdf).
+Ensuring its responsiveness this website was tested across different mobile devices. In a second step it was then tested across the most common internet browsers (Safari, Chrome, Internet Explorer, and Firefox), making sure it is compatible. For an overview, please see this excel file [here](https://github.com/alnibo/milestone-project-2-bicycles/blob/master/assets/testing-wireframes/testing-resp-comp.pdf).
 
 During the testing procedure it became clear that some media queries need to be created in order to maintain a good design across all screen sizes.
 
@@ -106,7 +106,7 @@ The data set of bicycle crashes was retrieved from [Data.gov](https://catalog.da
 
 The top header picture was taken from the online image library [Pixabay](https://pixabay.com/).
 
-The town seal of Chapel Hill used in the navbar and in the title bar as the icon logo was retrieved form [here](https://chapelhillpubliclibrary.org/town-seal/).
+The town seal of Chapel Hill used in the navbar and in the title bar as the icon logo was retrieved from [here](https://chapelhillpubliclibrary.org/town-seal/).
 
 ### Acknowledgements
 
