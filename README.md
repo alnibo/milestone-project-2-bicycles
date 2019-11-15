@@ -30,7 +30,7 @@ A help modal was added, which can be accessed hrough the "Help" button in the na
 
 To enhance user experience a button was added on the bottom of the page in order to jump back up to the top.
 
-As part of the design process wireframes were created to visualise and give an outline of the structures and layouts for both the mobile and desktop view. They can be viewed [here](https://github.com/alnibo/milestone-project-2-bicycles/tree/master/assets/wireframes).
+As part of the design process wireframes were created to visualise and give an outline of the structures and layouts for both the mobile and desktop view. They can be viewed [here](https://github.com/alnibo/milestone-project-2-bicycles/tree/master/assets/testing-wireframes).
 
 ## Features
 
@@ -80,13 +80,15 @@ The link to the data set was manually tested. By using `target="_blank"` it was 
 
 The number display of the amount of crashes in the top left of the page was first meant to be connected with the data and would have adjusted when selecting a data segment. For this following code was used and inserted in the urban_rural_number function in the js file.
 
-    `dc.numberDisplay("#crash-number")
+    dc.numberDisplay("#crash-number")
         .valueAccessor(function(d) {
             return d.total;
         })
-        .group(urbanPercent);`
+        .group(urbanPercent);
         
-While the number was now linked to the data and showing the amount of crashes when selecting a specific data segment it was displaying a wrong number in two cases. First, if nothing was selected - meaning it should display the amount of all crashes - it displayed 5 incidents too many. Second, when gender of biker "Male" was selected in the left pie chart it showed 3 cases to many. After being in contact with tutor support it turned out the code was correct, just that there might be a problem in the data set. However, no error was found when testing the csv-file on this [website](https://csvlint.io/). After checking the all the entries in the data file manually and finding no abnormalities I resolved to displaying a fixed number of all total crashes.
+While the number was now linked to the data and showing the amount of crashes when selecting a specific data segment it was displaying a wrong number in two cases. First, if nothing was selected - meaning it should display the amount of all crashes - it displayed 5 incidents too many. Second, when gender of biker "Male" was selected in the left pie chart it showed 3 cases to many. 
+
+After being in contact with tutor support it turned out the code was correct, just that there might be a problem in the data set. However, no error was found when testing the csv-file on this [website](https://csvlint.io/). After manually checking the entries in the data file and finding no abnormalities I resolved to displaying a fixed number of all total crashes.
 
 ## Deployment
 
@@ -108,9 +110,9 @@ The town seal of Chapel Hill used in the navbar and in the title bar as the icon
 
 ### Acknowledgements
 
-Information about the charts came from [here](https://dc-js.github.io/dc.js/examples/).
+Information about using dc.js and inspiration for charts came from [here](https://dc-js.github.io/dc.js/examples/).
 
-The navbar was retrieved from the Bootstrap [documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/) and then altered and customized for this site.
+The navbar was retrieved from Bootstrap [documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/) and then altered and customized for this site.
 
 The inspiration for the general layout came from this [project](https://github.com/Angie55/IFD_Milestone_Project_Two_Dashboard).
 
